@@ -13,7 +13,7 @@ import {
   Twitter 
 } from 'lucide-react';
 
-const Navbar = () => {
+export default function Navbar ()  {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -116,4 +116,3 @@ const Navbar = () => {
 
 
 
-export { Navbar };
