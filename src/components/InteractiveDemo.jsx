@@ -12,7 +12,7 @@ const InteractiveDemo = () => {
                     <div className="order-2 lg:order-1">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8">
                             <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-                                Interactive API Playground
+                                Our Offerings
                             </span>
                         </h2>
                         <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/80">
@@ -20,7 +20,7 @@ const InteractiveDemo = () => {
                         </p>
 
                         <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                            {['Multi-Channel Support', 'AI Moderation', 'Blockchain Audit', 'Quantum Encryption'].map((feature, i) => (
+                            {['Multiple Instances', 'High volume messges', 'Full Instances Encryption', '24*7 WP service'].map((feature, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, x: -20 }}

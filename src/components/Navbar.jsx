@@ -1,29 +1,27 @@
 "use client"
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, 
-  X, 
-  Send, 
-  Code, 
-  Shield, 
-  Book, 
-  GitHub, 
-  Linkedin, 
-  Twitter 
+import {
+  Menu,
+  X,
+  Send,
+  Code,
+  Shield,
+  Book,
+  GitHub,
+  Linkedin,
+  Twitter
 } from 'lucide-react';
 
-export default function Navbar ()  {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Solutions', icon: <Send className="w-5 h-5" /> },
-    { label: 'Developers', icon: <Code className="w-5 h-5" /> },
-    { label: 'Documentation', icon: <Book className="w-5 h-5" /> }
+    { label: "Documentation", icon: <Book className="w-5 h-5" />, href: "/doc" }
   ];
 
   return (
-    <nav 
+    <nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -31,7 +29,7 @@ export default function Navbar ()  {
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           whileHover={{ scale: 1.1 }}
           className="flex items-center space-x-3 cursor-pointer"
         >
@@ -44,9 +42,9 @@ export default function Navbar ()  {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 items-center">
           {navItems.map((item, index) => (
-            <motion.a 
+            <motion.a
               key={index}
-              href="#"
+              href="/doc"
               whileHover={{ scale: 1.1 }}
               className="text-white/70 hover:text-white flex items-center space-x-2 transition"
             >
@@ -54,14 +52,16 @@ export default function Navbar ()  {
               <span>{item.label}</span>
             </motion.a>
           ))}
-          
+
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="bg-cyan-500 text-black px-6 py-2 rounded-full font-semibold flex items-center space-x-2"
+            onClick={() => window.location.href = "https://app.chatlinker.cloud"}
           >
             <span>Get Started</span>
           </motion.button>
+
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -88,7 +88,7 @@ export default function Navbar ()  {
             <div className="container mx-auto px-6 py-6">
               <div className="space-y-4">
                 {navItems.map((item, index) => (
-                  <motion.a 
+                  <motion.a
                     key={index}
                     href="#"
                     whileHover={{ x: 10 }}
