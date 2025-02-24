@@ -42,10 +42,12 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-cyan-500/90 text-black px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-cyan-400 transition-all"
+              onClick={() => window.location.href = "https://app.chatlinker.cloud"}
             >
               <Rocket className="w-6 h-6" />
-              <span className="text-lg">Launch Your Network</span>
+              <span className="text-lg">Create Your Instances</span>
             </motion.button>
+
 
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -73,8 +75,23 @@ const HeroSection = () => {
               <div className="h-3 w-3 rounded-full bg-green-500" />
             </div>
             <code className="text-cyan-400 font-mono">
-              {`const whatsappAPI = new WhatsAppAPI({ auth: 'api-key', accountType: 'private', AI: true, throughput: '1M/sec' });`}
+              {`
+                const response = await fetch("https://api.chatlinker.cloud/v1/message/send", {
+                method: "POST",
+                 headers: {
+                "x-api-key": "your-api-key",
+                 "instance-key": "your-instance-key",
+                 "Content-Type": "application/json"
+                },
+              body: JSON.stringify({
+              to: "919864972356",
+              message: "Hello from the WhatsApp API!",
+             sessionId: "c0d46e71-55b7-4c8c-88df-389f94fafd80"
+             })
+             });
+            `}
             </code>
+
           </div>
         </motion.div>
       </div>
