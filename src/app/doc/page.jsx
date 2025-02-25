@@ -109,7 +109,7 @@ const ApiDocs = () => {
                             transition={{ duration: 4, repeat: Infinity }}
                         />
                         <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent relative">
-                            WhatsApp API Documentation
+                            ChatLinker API Documentation
                         </h1>
                     </div>
 

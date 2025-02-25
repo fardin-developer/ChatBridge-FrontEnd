@@ -35,7 +35,7 @@ export default function Navbar() {
         >
           <Send className="w-8 h-8 text-cyan-400" />
           <span className="text-2xl font-bold text-white">
-            Chat Bridge
+            Chat Linker
           </span>
         </motion.div>
 
@@ -77,39 +77,29 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-lg"
-          >
-            <div className="container mx-auto px-6 py-6">
-              <div className="space-y-4">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    whileHover={{ x: 10 }}
-                    className="block text-white/70 hover:text-white flex items-center space-x-3"
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </motion.a>
-                ))}
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-full bg-cyan-500 text-black px-6 py-3 rounded-full font-semibold"
-                >
-                  Get Started
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isMenuOpen && (
+        <div className="md:hidden bg-gray-900 mt-2 p-4 rounded-md">
+          <div className="flex flex-col space-y-4">
+            {navItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="text-white flex items-center space-x-2 hover:text-gray-300"
+              >
+                {item.icon}
+                <span>{item.label}</span>
+              </a>
+            ))}
+
+            <a
+              href="https://app.chatlinker.cloud"
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full text-center"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
