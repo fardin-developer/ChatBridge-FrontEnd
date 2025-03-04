@@ -2,21 +2,23 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Rocket, Terminal } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ container: ref });
+  const router = useRouter();
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="container mx-auto px-4 relative z-20">
+    <section className="relative h-auto flex items-center justify-center ">
+      <div className="container mx-auto px-4 relative ">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center"
+          transition={{ duration: 0.5 }}
+          className="text-center mt-40"
         >
-          <div className="mb-8 inline-block relative">
+          <div className="mb-10 inline-block relative">
             <motion.div
               className="absolute inset-0 bg-cyan-500/30 blur-3xl rounded-full"
               animate={{ scale: [1, 1.2, 1] }}
@@ -52,6 +54,7 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => { router.push('/doc') }}
               className="border-2 border-cyan-400/30 bg-black/30 px-8 py-4 rounded-xl font-bold flex items-center gap-3 backdrop-blur-lg hover:border-cyan-400/60 transition-all"
             >
               <Terminal className="w-6 h-6 text-cyan-400" />
@@ -67,33 +70,39 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1 }}
         >
+          {/* Background Blur */}
           <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-2xl" />
+
+          {/* Code Block Container */}
           <div className="relative bg-black/30 border border-cyan-400/20 rounded-2xl p-6 backdrop-blur-xl">
+
+            {/* Window Buttons */}
             <div className="flex gap-4 mb-4">
               <div className="h-3 w-3 rounded-full bg-red-500" />
               <div className="h-3 w-3 rounded-full bg-yellow-500" />
               <div className="h-3 w-3 rounded-full bg-green-500" />
             </div>
-            <code className="text-cyan-400 font-mono">
-              {`
-                const response = await fetch("https://api.chatlinker.cloud/v1/message/send", {
-                method: "POST",
-                 headers: {
-                "x-api-key": "your-api-key",
-                 "instance-key": "your-instance-key",
-                 "Content-Type": "application/json"
-                },
-              body: JSON.stringify({
-              to: "919864972356",
-              message: "Hello from the WhatsApp API!",
-             sessionId: "c0d46e71-55b7-4c8c-88df-389f94fafd80"
-             })
-             });
-            `}
-            </code>
 
+            {/* Code Block */}
+            <pre className="text-cyan-400 font-mono whitespace-pre-wrap break-words">
+              <code>
+                {`const response = await fetch("https://api.chatlinker.cloud/v1/message/send", {
+                 method: "POST",
+                      headers: {
+                      "x-api-key": "your-api-key",
+                      "instance-key": "your-instance-key",
+                      "Content-Type": "application/json"
+                        },
+                      body: JSON.stringify({
+                        to: "919864972356",
+                        message: "Hello from the WhatsApp API!",
+                      })
+                 });`}
+              </code>
+            </pre>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

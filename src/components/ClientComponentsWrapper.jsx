@@ -8,8 +8,10 @@ const InteractiveDemo = dynamic(() => import('@/components/InteractiveDemo'), { 
 export default function ClientComponentsWrapper() {
   return (
     <>
+      <div className='h-auto'>
       <HeroSection />
       <InteractiveDemo />
+      </div>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FeaturesSection from '@/components/FeaturesSection';
 import ClientComponentsWrapper from '@/components/ClientComponentsWrapper';
@@ -25,7 +24,6 @@ export default function Page() {
       </Head>
 
       <div className="min-h-screen flex flex-col bg-gray-900">
-        <Navbar />
         <main className="flex-grow text-white overflow-x-hidden relative bg-gray-900">
           <ClientComponentsWrapper />
           <FeaturesSection />

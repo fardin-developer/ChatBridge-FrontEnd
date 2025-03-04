@@ -7,8 +7,9 @@ import { Terminal, Send, Users, Key, Code, Database, Lock } from 'lucide-react';
 const ApiDocs = () => {
     const [activeTab, setActiveTab] = useState('overview');
 
-    const endpoints = {
-        send: {
+    const endpoints = [
+        // Your existing endpoints
+        {
             method: 'POST',
             path: '/send',
             description: 'Send a single WhatsApp message',
@@ -18,7 +19,7 @@ const ApiDocs = () => {
                 sessionId: 'Session identifier'
             }
         },
-        sendBulk: {
+        {
             method: 'POST',
             path: '/send-bulk',
             description: 'Send multiple WhatsApp messages',
@@ -26,47 +27,206 @@ const ApiDocs = () => {
                 messages: 'Array of message objects'
             }
         },
-        getQr: {
+        // New endpoints from the provided APIs
+        {
+            method: 'POST',
+            path: '/api/v1/user/register',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/user/login',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/user/me',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/qr/get_qr_code',
+            description: '',
+            params: {
+                instance_key: 'any'
+            }
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/qr/get-status',
+            description: '',
+            params: {
+                instance_key: ''
+            }
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/instance/create',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/instance/all',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/instance/disconnect',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/instance/{key}',
+            description: '',
+            params: {
+                key: ''
+            }
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/report/messages',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/webhook/{apiKey}',
+            description: '',
+            params: {
+                apiKey: '',
+                webhookUrl: 'any'
+            }
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/message/send',
+            description: '',
+            params: {
+                to: 'any',
+                message: 'any',
+                instanceKey: 'any'
+            }
+        },
+        {
+            method: 'POST',
+            path: '/api/v1/message/send-bulk',
+            description: '',
+            params: {
+                messages: 'any'
+            }
+        },
+        {
+            method: 'GET',
+            path: '/api/v1/subscribe/',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/create',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'GET',
+            path: '/all',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'POST',
+            path: '/disconnect',
+            description: '',
+            params: {}
+        },
+        {
+            method: 'GET',
+            path: '/{key}',
+            description: '',
+            params: {
+                key: ''
+            }
+        },
+        {
+            method: 'POST',
+            path: '/send',
+            description: '',
+            params: {
+                to: 'any',
+                message: 'any',
+                instanceKey: 'any'
+            }
+        },
+        {
+            method: 'POST',
+            path: '/send-bulk',
+            description: '',
+            params: {
+                messages: 'any'
+            }
+        },
+        {
+            method: 'GET',
+            path: '/',
+            description: '',
+            params: {}
+        },
+        {
             method: 'POST',
             path: '/get_qr_code',
-            description: 'Generate QR code for WhatsApp authentication',
+            description: '',
             params: {
-                token: 'Authentication token'
+                instance_key: 'any'
             }
         },
-        register: {
+        {
+            method: 'GET',
+            path: '/get-status',
+            description: '',
+            params: {
+                instance_key: ''
+            }
+        },
+        {
+            method: 'GET',
+            path: '/messages',
+            description: '',
+            params: {}
+        },
+        {
             method: 'POST',
             path: '/register',
-            description: 'Register a new user account',
-            params: {
-                email: 'User email',
-                name: 'User name',
-                password: 'User password'
-            }
+            description: '',
+            params: {}
         },
-        createApiKey: {
-            method: 'POST',
-            path: '/apikey/create',
-            description: 'Generate new API key'
-        },
-        login: {
+        {
             method: 'POST',
             path: '/login',
-            description: 'Authenticate user',
-            params: {
-                email: 'User email',
-                password: 'User password'
-            }
+            description: '',
+            params: {}
         },
-        webhook: {
+        {
+            method: 'GET',
+            path: '/me',
+            description: '',
+            params: {}
+        },
+        {
             method: 'POST',
             path: '/{apiKey}',
-            description: 'Configure webhook for WhatsApp events',
+            description: '',
             params: {
-                webhookUrl: 'URL to receive webhook notifications'
+                apiKey: '',
+                webhookUrl: 'any'
             }
         }
-    };
+    ];
 
     const tabVariants = {
         active: {
@@ -211,7 +371,7 @@ const ApiDocs = () => {
                                     <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-purple-500/20 blur-3xl rounded-full" />
                                     <h3 className="text-2xl font-bold text-white mb-4 relative">Base URL</h3>
                                     <code className="bg-black/70 p-3 rounded-lg text-cyan-400 block font-mono relative">
-                                        http://localhost:3000
+                                        https://api.chatlinker.cloud
                                     </code>
                                 </motion.div>
 
