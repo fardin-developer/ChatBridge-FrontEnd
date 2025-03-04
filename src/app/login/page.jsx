@@ -31,7 +31,7 @@ const AuthPages = () => {
     try {
       if (!isLogin) {
         // Registration
-        const response = await axios.post('http://localhost:3000/api/v1/user/register', {
+        const response = await axios.post('https://api.chatlinker.cloud/api/v1/user/register', {
           email: formData.email,
           name: formData.name,
           password: formData.password
@@ -44,7 +44,7 @@ const AuthPages = () => {
         setFormData({ email: '', password: '', name: '' });
       } else {
         // Login logic here when you have the endpoint
-        const response = await axios.post('http://localhost:3000/api/v1/user/login', {
+        const response = await axios.post('https://api.chatlinker.cloud/api/v1/user/login', {
           email: formData.email,
           password: formData.password
         })
