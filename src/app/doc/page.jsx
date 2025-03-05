@@ -199,24 +199,8 @@ const ApiDocs = () => {
             description: '',
             params: {}
         },
-        {
-            method: 'POST',
-            path: '/register',
-            description: '',
-            params: {}
-        },
-        {
-            method: 'POST',
-            path: '/login',
-            description: '',
-            params: {}
-        },
-        {
-            method: 'GET',
-            path: '/me',
-            description: '',
-            params: {}
-        },
+
+     
         {
             method: 'POST',
             path: '/{apiKey}',
@@ -494,14 +478,14 @@ const ApiDocs = () => {
                                         <pre className="bg-black/70 p-4 rounded-lg overflow-x-auto text-sm">
                                             <code className="text-green-400 font-mono">
                                                 {`POST /send HTTP/1.1
-Host: localhost:3000
+Host: https://api.chatlinker.cloud
 Content-Type: application/json
 X-API-Key: your_api_key_here
 
 {
   "to": "+1234567890",
   "message": "Hello from the API!",
-  "sessionId": "session_12345"
+  "instanceKey": "23wejr84i3j2oirj348r"
 }`}
                                             </code>
                                         </pre>
@@ -543,7 +527,7 @@ Content-Type: application/json
                                         <pre className="bg-black/70 p-4 rounded-lg overflow-x-auto text-sm">
                                             <code className="text-green-400 font-mono">
                                                 {`POST /send-bulk HTTP/1.1
-Host: localhost:3000
+Host: https://api.chatlinker.cloud
 Content-Type: application/json
 X-API-Key: your_api_key_here
 
@@ -552,12 +536,12 @@ X-API-Key: your_api_key_here
     {
       "to": "+1234567890",
       "message": "Hello user 1!",
-      "sessionId": "session_12345"
+      "instanceKey": "4rsk8kslijdfj8i"
     },
     {
       "to": "+9876543210",
       "message": "Hello user 2!",
-      "sessionId": "session_12345"
+      "instanceKey": "0kdsuykujsd7dd3"
     }
   ]
 }`}
