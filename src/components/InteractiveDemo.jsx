@@ -8,7 +8,6 @@ const InteractiveDemo = () => {
         <section className="py-8 sm:py-12 md:py-16 lg:py-20 relative">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center">
-                    {/* Left Column - Content */}
                     <div className="order-2 lg:order-1">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8">
                             <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
@@ -37,7 +36,6 @@ const InteractiveDemo = () => {
                         </div>
                     </div>
 
-                    {/* Right Column - Code Preview */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

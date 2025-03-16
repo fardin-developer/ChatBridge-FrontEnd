@@ -1,32 +1,31 @@
-import Head from 'next/head';
 import Footer from '@/components/Footer';
 import FeaturesSection from '@/components/FeaturesSection';
 import ClientComponentsWrapper from '@/components/ClientComponentsWrapper';
+import PricingSection from '@/components/PricingSection';
+
+export const metadata = {
+  title: 'Affordable WhatsApp API - Enterprise Messaging Infrastructure',
+  description: 'Discover our enterprise-grade WhatsApp API with secure architecture, real-time analytics, and interactive API playground.',
+  keywords: 'WhatsApp API, Messaging, Enterprise, API Playground',
+  openGraph: {
+    title: 'Advanced WhatsApp API',
+    description: 'Enterprise-grade messaging infrastructure for your business.',
+    images: 'https://chatlinker.cloud/og-image.png',
+    url: 'https://chatlinker.cloud',
+  },
+  alternates: {
+    canonical: 'https://chatlinker.cloud',
+  }
+};
 
 export default function Page() {
   return (
     <>
-      <Head>
-        <title>Advanced WhatsApp API - Enterprise Messaging Infrastructure</title>
-        <meta
-          name="description"
-          content="Discover our enterprise-grade WhatsApp API with quantum-secure architecture, real-time analytics, and interactive API playground."
-        />
-        <meta name="keywords" content="WhatsApp API, Messaging, Enterprise, Quantum Encryption, API Playground" />
-        <meta property="og:title" content="Advanced WhatsApp API" />
-        <meta
-          property="og:description"
-          content="Enterprise-grade messaging infrastructure with quantum-secure architecture."
-        />
-        <meta property="og:image" content="https://yourdomain.com/og-image.png" />
-        <meta property="og:url" content="https://yourdomain.com" />
-        <link rel="canonical" href="https://yourdomain.com" />
-      </Head>
-
       <div className="min-h-screen flex flex-col bg-gray-900">
         <main className="flex-grow text-white overflow-x-hidden relative bg-gray-900">
           <ClientComponentsWrapper />
           <FeaturesSection />
+          <PricingSection />
         </main>
         <Footer />
       </div>
