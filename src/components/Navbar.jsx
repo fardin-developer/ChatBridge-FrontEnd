@@ -15,10 +15,10 @@ export default function Navbar() {
 
   return (
     <nav
-      initial={{ opacity: 0, y: -50 }}
+      // initial={{ opacity: 0, y:  }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 left-0 right-0 z-50 from-cyan-500 to-gray-600 backdrop-blur-lg"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg"
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" className="flex items-center space-x-3 cursor-pointer" title="Go to Home">
