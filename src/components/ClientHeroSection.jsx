@@ -18,7 +18,7 @@ const ClientHeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mt-40"
+          className="text-center mt-56 md:mt-[20rem]"
         >
           <div className="mb-10 inline-block relative">
             <motion.div
@@ -27,7 +27,7 @@ const ClientHeroSection = () => {
               transition={{ duration: 4, repeat: Infinity }}
             />
             <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent relative">
-              Advanced WhatsApp API
+              Affordable WhatsApp API
             </h2>
           </div>
 
@@ -66,7 +66,7 @@ const ClientHeroSection = () => {
 
         {/* Floating API Preview */}
         <motion.div
-          className="mt-20 mx-auto max-w-4xl relative"
+          className="mx-auto max-w-4xl mt-24 md:mt-44"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1 }}
@@ -75,7 +75,7 @@ const ClientHeroSection = () => {
           <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-2xl" />
 
           {/* Code Block Container */}
-          <div className="relative bg-black/30 border border-cyan-400/20 rounded-2xl p-6 backdrop-blur-xl">
+          <div className="bg-black/30 border border-cyan-400/20 rounded-2xl p-6 backdrop-blur-xl">
             {/* Window Buttons */}
             <div className="flex gap-4 mb-4">
               <div className="h-3 w-3 rounded-full bg-red-500" />

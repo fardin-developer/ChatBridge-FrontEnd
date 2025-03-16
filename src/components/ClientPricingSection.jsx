@@ -22,8 +22,8 @@ const ClientPricingSection = () => {
       price: 300,
       range: "0-10 instances",
       icon: <Zap className="w-8 h-8" />,
-      color: "from-cyan-400 to-blue-500",
-      shadowColor: "cyan-500/20",
+      color: "from-blue-500 to-blue-600",
+      shadowColor: "blue-500/20",
       delay: 0.2,
     },
     {
@@ -32,8 +32,8 @@ const ClientPricingSection = () => {
       price: 250,
       range: "10-20 instances",
       icon: <Warehouse className="w-8 h-8" />,
-      color: "from-purple-400 to-pink-500",
-      shadowColor: "purple-500/20",
+      color: "from-indigo-500 to-indigo-600",
+      shadowColor: "indigo-500/20",
       popular: true,
       delay: 0.4,
     },
@@ -43,8 +43,8 @@ const ClientPricingSection = () => {
       price: 200,
       range: "20+ instances",
       icon: <Warehouse className="w-8 h-8" />,
-      color: "from-amber-400 to-orange-500",
-      shadowColor: "amber-500/20",
+      color: "from-blue-500 to-blue-600",
+      shadowColor: "gray-700/20",
       delay: 0.6,
     },
   ];
@@ -118,7 +118,7 @@ const ClientPricingSection = () => {
                   {features.map((feature) => (
                     <li key={feature} className="flex items-center">
                       <div className={`w-5 h-5 rounded-full bg-gradient-to-r ${plan.color} flex items-center justify-center mr-3 flex-shrink-0`}>
-                        <Check className="w-3 h-3 text-black" />
+                        <Check className="w-3 h-3 text-gray-100" />
                       </div>
                       <span className="text-white/80">{feature}</span>
                     </li>
@@ -130,7 +130,7 @@ const ClientPricingSection = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.location.href = "https://app.chatlinker.cloud"}
-                className={`mt-8 w-full py-3 px-6 rounded-xl font-medium bg-gradient-to-r ${plan.color} text-black`}
+                className={`mt-8 w-full py-3 px-6 rounded-xl font-medium bg-gradient-to-r ${plan.color} text-gray-100`}
               >
                 Get Started
               </motion.button>
