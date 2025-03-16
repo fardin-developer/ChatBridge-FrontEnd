@@ -1,13 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Send, Book, Info, Mail } from "lucide-react";
+import { Menu, X, Send, Book, Info, Mail, TagIcon } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Documentation", icon: <Book className="w-5 h-5" />, href: "/doc" },
+    { label: "Pricing", icon: <TagIcon className="w-5 h-5" />, href: "/#pricing" },
     { label: "About Us", icon: <Info className="w-5 h-5" />, href: "/about" },
     { label: "Contact Us", icon: <Mail className="w-5 h-5" />, href: "/contact" },
   ];
@@ -17,10 +18,9 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 left-0 right-0 z-50    from-cyan-500 to-gray-600 backdrop-blur-lg"
+      className="sticky top-0 left-0 right-0 z-50 from-cyan-500 to-gray-600 backdrop-blur-lg"
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-
         <a href="/" className="flex items-center space-x-3 cursor-pointer" title="Go to Home">
           <motion.div whileHover={{ scale: 1.1 }} role="presentation">
             <Send className="w-8 h-8 text-cyan-400" />
@@ -28,22 +28,20 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold text-white">Chat Linker</h1>
         </a>
 
-
-
         <div className="hidden md:flex space-x-6 items-center">
           {navItems.map((item, index) => (
             <motion.a
               key={index}
               href={item.href}
+              onClick={item.action}
               whileHover={{ scale: 1.1 }}
-              className="text-white/70 hover:text-white flex items-center space-x-2 transition"
+              className="text-white/70 hover:text-white flex items-center space-x-2 transition cursor-pointer"
             >
               {item.icon}
               <span>{item.label}</span>
             </motion.a>
           ))}
         </div>
-
 
         <motion.button
           whileHover={{ scale: 1.1 }}
@@ -53,7 +51,6 @@ export default function Navbar() {
         >
           <span>Get Started</span>
         </motion.button>
-
 
         <div className="md:hidden">
           <motion.button
@@ -65,7 +62,6 @@ export default function Navbar() {
           </motion.button>
         </div>
       </div>
-
 
       <AnimatePresence>
         {isMenuOpen && (
@@ -81,7 +77,8 @@ export default function Navbar() {
                 <a
                   key={index}
                   href={item.href}
-                  className="text-white flex items-center space-x-2 hover:text-gray-300"
+                  onClick={item.action}
+                  className="text-white flex items-center space-x-2 hover:text-gray-300 cursor-pointer"
                 >
                   {item.icon}
                   <span>{item.label}</span>

@@ -1,16 +1,12 @@
-"use client";
-import dynamic from 'next/dynamic';
-
-// Dynamically import Client Components
-const HeroSection = dynamic(() => import('@/components/HeroSection'), { ssr: false });
-const InteractiveDemo = dynamic(() => import('@/components/InteractiveDemo'), { ssr: false });
+import HeroSection from '@/components/HeroSection';
+import InteractiveDemo from '@/components/InteractiveDemo';
 
 export default function ClientComponentsWrapper() {
   return (
     <>
       <div className='h-auto'>
-      <HeroSection />
-      <InteractiveDemo />
+        <HeroSection />
+        <InteractiveDemo />
       </div>
     </>
   );
